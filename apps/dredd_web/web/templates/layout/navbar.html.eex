@@ -1,0 +1,16 @@
+<%= if current_user(@conn) do %>
+  <ul class="nav navbar-nav left-nav">
+    <li><a class="nav-element sliding-middle-out" href="/dashboard">Dashboard</a></li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+    <li><a class="nav-element sliding-middle-out" href="/user/<%= current_user(@conn).id %>"><%= current_user(@conn).username %></a></li>
+  </ul>
+<% else %>
+  <ul class="nav navbar-nav left-nav">
+    <li><a class="nav-element sliding-middle-out" href="/about">About</a></li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+    <li><a class="nav-element sliding-middle-out" href="/signup">Sign up</a></li>
+    <li><a class="nav-element sliding-middle-out" href="/login">Login</a></li>
+  </ul>
+<% end %>

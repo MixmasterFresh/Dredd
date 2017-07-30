@@ -1,0 +1,49 @@
+/* This file is for your main application css. */
+
+.navigation {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.logo {
+  color: #333 !important;
+  font-family: 'Allerta Stencil', sans-serif;
+  font-size: 40px;
+}
+
+.sliding-middle-out {
+	display: inline-block;
+	position: relative;
+	padding-bottom: 3px;
+}
+.sliding-middle-out:hover {
+  text-decoration: none;
+}
+.sliding-middle-out:after {
+	content: '';
+	display: block;
+	margin: auto;
+	height: 3px;
+	width: 0px;
+	background: transparent;
+	transition: width .5s ease, background-color .5s ease;
+}
+.sliding-middle-out:hover:after {
+	width: 100%;
+	background: #333;
+}
+
+.nav-element {
+	color: #333;
+	margin:10px;
+	font-size: 20px;
+}
+
+.nav-element:hover {
+	background-color: #FFF !important;
+	color: #333;
+}
+
+.left-nav {
+	margin-left:20px;
+}
