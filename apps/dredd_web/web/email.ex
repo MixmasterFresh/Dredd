@@ -1,12 +1,12 @@
 defmodule Myapp.Email do
   use Bamboo.Phoenix, view: Myapp.EmailView
 
-  def sign_in_email(person) do
+  def sign_up_email(person) do
     base_email()
-    |> to(person)
-    |> subject("Your Sign In Link")
-    |> assign(:person, person)
-    |> render(:sign_in)
+    |> to(user.email)
+    |> subject("Your Dredd Login Information")
+    |> assign(:user, user)
+    |> render(:sign_up)
   end
 
   defp base_email do

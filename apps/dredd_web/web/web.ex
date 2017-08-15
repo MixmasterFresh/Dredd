@@ -36,6 +36,7 @@ defmodule DreddWeb.Web do
 
       import DreddWeb.Router.Helpers
       import DreddWeb.Gettext
+      import DreddWeb.Utils
     end
   end
 

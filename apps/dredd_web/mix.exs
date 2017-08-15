@@ -34,7 +34,7 @@ defmodule DreddWeb.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
-    [{:phoenix, "~> 1.2.4"},
+    [{:phoenix, "~> 1.2.5"},
      {:phoenix_pubsub, "~> 1.0"},
      {:phoenix_ecto, "~> 3.0"},
      {:postgrex, ">= 0.0.0"},
@@ -46,6 +46,7 @@ defmodule DreddWeb.Mixfile do
      {:comeonin, "~> 3.2"},
      {:bamboo, "~> 0.8"},
      {:bamboo_smtp, "~> 1.4.0"},
+     {:ex_admin, github: "smpallen99/ex_admin"},
      {:worker_manager, in_umbrella: true}]
   end
 

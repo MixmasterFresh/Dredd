@@ -18,6 +18,13 @@ defmodule DreddWeb.LoginController do
     end
   end
 
+  def logout(conn, _) do
+    conn
+    |> Guardian.Plug.sign_out
+    |> put_flash(:info, "Signed out")
+    |> redirect(to: "/")
+  end
+
   def unauthenticated(conn, params) do
     conn
     |> put_status(401)

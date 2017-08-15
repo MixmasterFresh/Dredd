@@ -1,4 +1,4 @@
 # Dredd
 
-**TODO: Add description**
+This is Dredd. Description coming soon.
 
