@@ -2,11 +2,7 @@ engines:
   credo:
     enabled: true
     channel: "beta"
-  stylelint:
-    enabled: true
 ratings:
   paths:
   - "**.ex"
   - "**.exs"
-  - "**.css"
-  - "**.js"
