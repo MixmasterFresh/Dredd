@@ -4,10 +4,9 @@ engines:
     channel: "beta"
   stylelint:
     enabled: true
-  duplication:
-    enabled: true
 ratings:
   paths:
   - "**.ex"
   - "**.exs"
   - "**.css"
+  - "**.js"
