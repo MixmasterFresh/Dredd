@@ -5,14 +5,27 @@ defmodule DreddWeb.Class do
     field :name, :string
     field :description, :string
     belongs_to :organization, DreddWeb.Organization
-    many_to_many :users, Tag, join_through: "memberships"
+    many_to_many :students, DreddWeb.User, join_through: "memberships"
+    has_many :memberships, DreddWeb.Membership
 
     timestamps()
   end
 
-  @doc """
-  Builds a changeset based on the `struct` and `params`.
-  """
+  def getClassWithStudents(id) do
+    students_query =
+       from u in User,
+       join: m in Membership,
+       on: m.user_id == u.id and m.class_id == ^id,
+       preload: [memberships: m]
+
+    query =
+       from c in Class,
+       where: c.id == ^id,
+       preload: [students: ^members_query]
+
+    query |> DreddWeb.Repo.all
+  end
+
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, [:name])

@@ -1,7 +1,7 @@
 defmodule Myapp.Email do
   use Bamboo.Phoenix, view: Myapp.EmailView
 
-  def sign_up_email(person) do
+  def sign_up_email(user) do
     base_email()
     |> to(user.email)
     |> subject("Your Dredd Login Information")

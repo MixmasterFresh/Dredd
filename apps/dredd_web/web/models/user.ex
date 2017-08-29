@@ -11,7 +11,8 @@ defmodule DreddWeb.User do
     field :token, :string
     field :valid, :boolean
     field :deleted, :boolean
-    many_to_many :classes, Tag, join_through: "memberships"
+    many_to_many :classes, DreddWeb.Class, join_through: "memberships"
+    has_many :memberships, DreddWeb.Membership
 
     timestamps()
   end
@@ -27,7 +28,7 @@ defmodule DreddWeb.User do
 
   def add_token(changeset) do
     changeset
-    |> put_change(:token, :crypto.strong_rand_bytes(length) |> Base.url_encode64(padding: false))
+    |> put_change(:token, :crypto.strong_rand_bytes(32) |> Base.url_encode64(padding: false))
   end
 
   def register_user(struct, params) do
